@@ -1300,7 +1300,7 @@
 <string name="profileNameHome">"Dom"</string>
 <string name="profileNameNight">"Noc"</string>
 <string name="profileNameSilent">"Cichy"</string>
-<string name="profileNameWork">"Work"</string>
+<string name="profileNameWork">"Praca"</string>
 
 <string name="reboot_confirm">"Twój telefon zostanie uruchomiony ponownie."</string>
 <string name="reboot_progress">"Restart\u2026"</string>
@@ -1356,7 +1356,7 @@
 <string name="weather_8">"Zamarzająca mżawka"</string>
 <string name="weather_9">"Mżawka"</string>
 
-<string name="global_actions_expanded_desktop_mode_off_status">Wyłączony</string>
-<string name="global_actions_expanded_desktop_mode_on_status">Włączony</string>
-<string name="global_actions_toggle_expanded_desktop_mode">Rozszerzony widok</string>
+<string name="global_actions_expanded_desktop_mode_off_status">"Wyłączony"</string>
+<string name="global_actions_expanded_desktop_mode_on_status">"Włączony"</string>
+<string name="global_actions_toggle_expanded_desktop_mode">"Rozszerzony widok"</string>
 </resources>
