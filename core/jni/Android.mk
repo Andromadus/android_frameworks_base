@@ -86,7 +86,6 @@ LOCAL_SRC_FILES:= \
 	android_util_Process.cpp \
 	android_util_StringBlock.cpp \
 	android_util_XmlBlock.cpp \
-	android_util_PackageRedirectionMap.cpp \
 	android/graphics/AutoDecodeCancel.cpp \
 	android/graphics/BitmapFactory.cpp \
 	android/graphics/Camera.cpp \
@@ -152,11 +151,6 @@ LOCAL_SRC_FILES:= \
 	android_content_res_Configuration.cpp \
 	android_animation_PropertyValuesHolder.cpp \
 	com_android_internal_net_NetworkStatsFactory.cpp
-
-ifeq ($(call is-vendor-board-platform,QCOM),true)
-LOCAL_SRC_FILES += com_android_internal_app_ActivityTrigger.cpp
-LOCAL_CFLAGS += -DQCOM_ACTIVITY_TRIGGER
-endif
 
 LOCAL_C_INCLUDES += \
 	$(JNI_H_INCLUDE) \

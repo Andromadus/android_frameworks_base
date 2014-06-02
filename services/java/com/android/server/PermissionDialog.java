@@ -39,6 +39,8 @@ class PermissionDialog extends BasePermissionDialog {
     private final AppOpsService mService;
     private final String mPackageName;
     private final int mCode;
+    private View  mView;
+    private CheckBox mChoice;
     private int mUid;
     final CharSequence[] mOpLabels;
     private Context mContext;
@@ -48,9 +50,9 @@ class PermissionDialog extends BasePermissionDialog {
     static final int ACTION_IGNORED = 0x4;
     static final int ACTION_IGNORED_TIMEOUT = 0x8;
 
-    // 1-minute timeout, then we automatically dismiss the permission
-    // dialog
-    static final long DISMISS_TIMEOUT = 1000 * 60 * 1;
+    // 15s timeout, then we automatically dismiss the permission
+    // dialog. Otherwise, it may cause watchdog timeout sometimes.
+    static final long DISMISS_TIMEOUT = 1000 * 15 * 1;
 
     public PermissionDialog(Context context, AppOpsService service,
             int code, int uid, String packageName) {
@@ -81,16 +83,23 @@ class PermissionDialog extends BasePermissionDialog {
                 | WindowManager.LayoutParams.PRIVATE_FLAG_SHOW_FOR_ALL_USERS;
         getWindow().setAttributes(attrs);
 
+        mView = getLayoutInflater().inflate(
+             com.android.internal.R.layout.permission_confirmation_dialog,
+             null);
+        TextView tv = (TextView) mView.findViewById(
+            com.android.internal.R.id.permission_text);
+        mChoice = (CheckBox) mView.findViewById(
+            com.android.internal.R.id.permission_remember_choice_checkbox);
         String name = getAppName(mPackageName);
         if(name == null)
             name = mPackageName;
-        setMessage(mContext.getString(com.android.internal.R.string.privacy_guard_dialog_summary,
+        tv.setText(mContext.getString(com.android.internal.R.string.privacy_guard_dialog_summary,
                 name, mOpLabels[mCode]));
+        setView(mView);
 
         // After the timeout, pretend the user clicked the quit button
-        //mHandler.sendMessageDelayed(
-        //        mHandler.obtainMessage(ACTION_IGNORED_TIMEOUT),
-        //        DISMISS_TIMEOUT);
+        mHandler.sendMessageDelayed(
+                mHandler.obtainMessage(ACTION_IGNORED_TIMEOUT), DISMISS_TIMEOUT);
     }
 
     private String getAppName(String packageName) {
@@ -112,7 +121,7 @@ class PermissionDialog extends BasePermissionDialog {
     private final Handler mHandler = new Handler() {
         public void handleMessage(Message msg) {
             int mode;
-            boolean remember = true;
+            boolean remember = mChoice.isChecked();
             switch(msg.what) {
                 case ACTION_ALLOWED:
                     mode = AppOpsManager.MODE_ALLOWED;

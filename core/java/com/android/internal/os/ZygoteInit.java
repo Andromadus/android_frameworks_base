@@ -192,10 +192,16 @@ public class ZygoteInit {
     static void closeServerSocket() {
         try {
             if (sServerSocket != null) {
+                FileDescriptor fd = sServerSocket.getFileDescriptor();
                 sServerSocket.close();
+                if (fd != null) {
+                    Libcore.os.close(fd);
+                }
             }
         } catch (IOException ex) {
             Log.e(TAG, "Zygote:  error closing sockets", ex);
+        } catch (libcore.io.ErrnoException ex) {
+            Log.e(TAG, "Zygote:  error closing descriptor", ex);
         }
 
         sServerSocket = null;
@@ -380,8 +386,6 @@ public class ZygoteInit {
                 ar.recycle();
                 Log.i(TAG, "...preloaded " + N + " resources in "
                         + (SystemClock.uptimeMillis()-startTime) + "ms.");
-            } else {
-                Log.i(TAG, "Preload resources disabled, skipped.");
             }
             mResources.finishPreloading();
         } catch (RuntimeException e) {
