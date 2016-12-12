@@ -1290,4 +1290,73 @@
     <string name="default_audio_route_category_name" msgid="3722811174003886946">"System"</string>
     <string name="bluetooth_a2dp_audio_route_name" msgid="8575624030406771015">"Dźwięk Bluetooth"</string>
     <string name="media_route_chooser_grouping_done" msgid="7966438307723317169">"Gotowe"</string>
+    
+<string name="profileGroupCalendar">"Kalendarz"</string>
+<string name="profileGroupEmail">"Email"</string>
+<string name="profileGroupGmail">"Gmail"</string>
+<string name="profileGroupPhone">"Telefon"</string>
+<string name="profileGroupSMS">"SMS"</string>
+<string name="profileNameDefault">"Domyślny"</string>
+<string name="profileNameHome">"Dom"</string>
+<string name="profileNameNight">"Noc"</string>
+<string name="profileNameSilent">"Cichy"</string>
+<string name="profileNameWork">"Praca"</string>
+
+<string name="reboot_confirm">"Twój telefon zostanie uruchomiony ponownie."</string>
+<string name="reboot_progress">"Restart\u2026"</string>
+<string name="reboot_reboot">"Uruchom ponownie"</string>
+<string name="reboot_recovery">"Recovery"</string>
+
+<string name="weather_0">"Tornado"</string>
+<string name="weather_1">"Burza tropikalna"</string>
+<string name="weather_10">"Deszcz marznący"</string>
+<string name="weather_11">"Opady"</string>
+<string name="weather_12">"Opady"</string>
+<string name="weather_13">"Śnieg"</string>
+<string name="weather_14">"Śnieg"</string>
+<string name="weather_15">"Śnieżyca"</string>
+<string name="weather_16">"Śnieg"</string>
+<string name="weather_17">"Grad"</string>
+<string name="weather_18">"Deszcz ze śniegiem"</string>
+<string name="weather_19">"Kurz"</string>
+<string name="weather_2">"Huragan"</string>
+<string name="weather_20">"Mgła"</string>
+<string name="weather_21">"Zmętnienie"</string>
+<string name="weather_22">"Smog"</string>
+<string name="weather_23">"Porywisty wiatr"</string>
+<string name="weather_24">"Wietrznie"</string>
+<string name="weather_25">"Zimno"</string>
+<string name="weather_26">"Pochmurnie"</string>
+<string name="weather_27">"Pełne zachmurzenie"</string>
+<string name="weather_28">"Pełne zachmurzenie"</string>
+<string name="weather_29">"Częściowe zachmurzenie"</string>
+<string name="weather_3">"Burze"</string>
+<string name="weather_30">"Częściowe zachmurzenie"</string>
+<string name="weather_31">"Bezchmurnie"</string>
+<string name="weather_32">"Słonecznie"</string>
+<string name="weather_33">"Słonecznie"</string>
+<string name="weather_34">"Słonecznie"</string>
+<string name="weather_35">"Deszcz z gradem"</string>
+<string name="weather_36">"Upał"</string>
+<string name="weather_37">"Burze"</string>
+<string name="weather_38">"Burze"</string>
+<string name="weather_39">"Burze"</string>
+<string name="weather_4">"Burze"</string>
+<string name="weather_40">"Opady"</string>
+<string name="weather_41">"Śnieżyca"</string>
+<string name="weather_42">"Śnieg"</string>
+<string name="weather_43">"Śnieżyca"</string>
+<string name="weather_44">"Częściowe zachmurzenie"</string>
+<string name="weather_45">"Burze"</string>
+<string name="weather_46">"Śnieg"</string>
+<string name="weather_47">"Burze"</string>
+<string name="weather_5">"Deszcz ze śniegiem"</string>
+<string name="weather_6">"Deszcz ze śniegiem"</string>
+<string name="weather_7">"Deszcz ze śniegiem"</string>
+<string name="weather_8">"Zamarzająca mżawka"</string>
+<string name="weather_9">"Mżawka"</string>
+
+<string name="global_actions_expanded_desktop_mode_off_status">"Wyłączony"</string>
+<string name="global_actions_expanded_desktop_mode_on_status">"Włączony"</string>
+<string name="global_actions_toggle_expanded_desktop_mode">"Rozszerzony widok"</string>
 </resources>
